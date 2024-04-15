@@ -16,7 +16,12 @@ func NewHandler(db *gorm.DB) *handler {
 }
 
 func (h *handler) RegisterRoutes(router *gin.Engine) {
-	router.GET("/books", h.GetBooks)
+	// Add a book to the library.
 	router.POST("/", h.AddBook)
+	// Get all books in the library.
+	router.GET("/books", h.GetBooks)
+	// Get a book by ID.
 	router.GET("/book/:book_id", h.GetBook)
+	// Delete a book by ID.
+	router.DELETE("/book/:book_id", h.DeleteBook)
 }

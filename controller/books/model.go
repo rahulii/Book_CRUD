@@ -23,3 +23,8 @@ type GetBooksResponse struct {
 type GetBookResponse struct {
 	Book model.Book `json:"book"`
 }
+
+type DeleteBookResponse struct {
+	ID      uint   `json:"id"`
+	Message string `json:"message"`
+}
